@@ -15,7 +15,9 @@ const postDate = post.data.updatedDate ?? post.data.publishDate;
 <FormattedDate date={postDate} class="min-w-[120px] text-gray-500" />
 <Tag>
 	<a href={`/posts/${post.slug}/`} class="cactus-link" rel="prefetch">
-		{post.data.title}
+    {
+      post.data.title.length > 40 ? post.data.title.substring(0, 40) + '...' : post.data.title
+    }
 	</a>
 </Tag>
 {withDesc && <q class="line-clamp-3 block italic">{post.data.description}</q>}
