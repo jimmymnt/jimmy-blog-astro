@@ -1,6 +1,6 @@
 ---
 title: "Request in LaraWP"
-publishDate: "12 June 2022"
+publishDate: "2 September 2023"
 description: "Another example post for Astro Cactus, this time written in a plain markdown file"
 tags: ["larawp", "request"]
 ---
