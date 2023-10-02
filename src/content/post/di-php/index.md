@@ -2,9 +2,11 @@
 title: "Dependency Injection in PHP"
 description: "Dependency Injection (DI) is a fundamental concept in modern PHP development..."
 publishDate: "02 Oct 2023"
+coverImage:
+  src: "./cover-image.png"
+  alt: "Dependency Injection in PHP"
 tags: ["php", "DI"]
 ---
-
 
 # Understanding Dependency Injection in PHP
 
