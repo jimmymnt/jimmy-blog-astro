@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 import PageLayout from "@/layouts/Base";
-import aboutImg from "@/assets/about-astro.png";
+import authorBlogAvatar from '../../public/jimmy-nguyen.png';
 
 const meta = {
 	title: "About",
@@ -38,5 +38,13 @@ const meta = {
       <p>Cheers to new beginnings and exciting adventures ahead!</p>
       <p>Jimmy Nguyen</p>
     </section>
+    <Image
+      src={authorBlogAvatar}
+      alt={'Jimmy Nguyen'}
+      width="200"
+      class="object-cover rounded-xl"
+      loading="lazy"
+      fetchpriority="high"
+    />
 	</div>
 </PageLayout>
