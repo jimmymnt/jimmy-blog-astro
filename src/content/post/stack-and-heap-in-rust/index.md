@@ -191,7 +191,7 @@ Trong đó, `->0x1000` là một POINTER đang trỏ đến địa chỉ của v
 
 > 📓 Một lưu ý nhỏ ở đây, chúng ta chưa nói về những gì đang thực sự diễn ra hoặc ý nghĩa thực sự của việc "allocate" hoặc "deallocate" bộ nhớ trong bài viết này, đi chi tiết vào nó sẽ thực sự rất dài và tốn nhiều thời gian, một cái nữa đó là không phải Heap mà mình đang đề cập ở bài viết này sẽ được lưu như dạng trong ví dụ là được bắt đầu từ phía trên cùng. Mình chỉ đang đưa ra một biểu diễn dễ hiểu cho các bạn 😄 Mình sẽ nói cụ thể về Heap được lưu ở đâu ở những bài viết sau trong series.
 
-Ví dụ, chúng ta có 1GB RAM, thì bộ nhớ của chúng ta sẽ có (2^30) addresses. Và Stack của chúng ta bắt đầu từ vị trí 0 = `0x1aa0`, và kết thúc ở `0x1000`, hay nói cách khác giới hạn sẽ nằm trong `[0x1aa0...0x1000]`.
+Ví dụ, chúng ta có 1GB RAM, thì bộ nhớ của chúng ta sẽ có (2^30) addresses. Và Stack của chúng ta bắt đầu từ vị trí 0 = `0x1aa0`, và kết thúc ở `0x1000`, hay nói cách khác giới hạn sẽ nằm trong đoạn `[0x1aa0...0x1000]`.
 
 Trong trường hợp ở ví dụ của chúng ta, chúng ta đã phân bổ bộ nhớ cho `another_value` ở Heap, và sau khi `main()` được gọi và kết thúc, thì `age` sẽ được giải phóng bộ nhớ, trước tiên nó sẽ giải phóng bộ nhớ của Heap nếu có trước, và trong ví dụ của chúng ta sẽ là `0x1000`, lúc này stack frame của chúng ta sẽ trông như sau:
 

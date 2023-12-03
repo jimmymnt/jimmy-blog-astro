@@ -43,6 +43,29 @@ const { headings } = await post.render();
      Applies to all <h1> tags on your site. */
   pre.astro-code > code {
     white-space: pre !important;
+    background: transparent !important;
+  }
+
+  .prose :where(code):not(:where([class~=not-prose], [class~=not-prose])) {
+    background: #626262 !important;
+    border-radius: 5px !important;
+    font-size: 13px !important;
+    padding: 1px 4px;
+  }
+
+  .prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::before {
+    content: ""!important;
+  }
+
+  .prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::after {
+    content: ""!important;
+  }
+
+  blockquote {
+    border-left: 3px solid !important;
+    color: hsl(var(--theme-text) / 1) !important;
+    background: #333 !important;
+    padding: 1px;
   }
 </style>
 
