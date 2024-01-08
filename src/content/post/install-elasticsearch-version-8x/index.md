@@ -6,6 +6,12 @@ tags: ["ubuntu", "22.04", "elasticsearch"]
 ---
 ## Elasticsearch version: 8.x
 
+### Prerequisites
+- An Ubuntu 22.04 server with 4GB RAM and 2 CPUs set up with a non-root sudo user. You can achieve this by following the [Initial Server Setup with Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04).For this tutorial, we will work with the amount of 4vCPUs and 8GB of RAM to run Elasticsearch. Note that the amount of CPU, RAM, and storage that your Elasticsearch server will require depends on the volume of logs that you expect.
+- Nginx installed on your server, which we will configure later in this guide as a reverse proxy for Kibana. Follow our guide in this post.
+
+### Let's begin
+
 ```
 $ wget -O - https://artifacts.elastic.co/GPG-KEY-elasticsearch | gpg --dearmor -o /etc/apt/keyrings/elasticsearch-keyring.gpg
 ```
@@ -56,12 +62,12 @@ Generate an enrollment token for Elasticsearch nodes with
 $ sudo systemctl enable --now elasticsearch
 ```
 
-Backup Elasticsearch origin:
+### Backup Elasticsearch origin:
 ```
 $ cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.orig
 ```
 
-Test Elasticsearch
+### Test Elasticsearch
 ```
 $ curl -u elastic --cacert /etc/elasticsearch/certs/http_ca.crt https://127.0.0.1:9200
 ```
@@ -177,7 +183,7 @@ $ sudo rm /etc/nginx/sites-enabled/default
 ```
 
 Then, create a new Nginx configuration file with your favorite text editor, here we use `vim`:
-```
+```text
 $ sudo vim /etc/nginx/sites-available/your_domain.conf
 ```
 Add the following content to the file:
@@ -217,9 +223,7 @@ $ sudo systemctl reload nginx
 ```
 
 Allow Nginx Full in Firewall
-
-Please make sure that you've enabled port 22 to SSH.
-
+> NOTE: Please make sure that you've enabled port 22 to SSH.
 
 ```
 $ sudo ufw enable
@@ -228,7 +232,7 @@ $ sudo ufw enable
 $ ufw allow 'Nginx Full'
 ```
 
-Check status again:
+Check status again
 ```
 $ sudo ufw status
 ```
@@ -326,6 +330,6 @@ Congratulations, all simulated renewals succeeded:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
 
-## Conclusion
+## Result
 After all above steps, we are now can access to our Elasticsearch homepage
 ![Image](../../../assets/elastic-homepage.png)
