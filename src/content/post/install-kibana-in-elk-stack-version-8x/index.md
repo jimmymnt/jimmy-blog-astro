@@ -1,8 +1,8 @@
 ---
-title: "Install Elasticsearch version 8.x on Ubuntu 22.04"
-description: "Install elastic search version 8.x on Ubuntu 22.04"
+title: "Install Kibana version 8.x on Ubuntu 22.04"
+description: "Install Kibana version 8.x on Ubuntu 22.04"
 publishDate: "8 Jan 2024"
-tags: ["ubuntu", "22.04", "elasticsearch"]
+tags: ["ubuntu", "22.04", "kibana", "elk", "elastic"]
 ---
 ## Kibana version: 8.x
 
